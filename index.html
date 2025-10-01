@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Gerenciador Moderno de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header com tema toggle -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <i class="fas fa-check-circle logo-icon"></i>
+                    <h1>TaskFlow</h1>
+                </div>
+                <div class="header-controls">
+                    <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Seção de estatísticas -->
+        <section class="stats-section">
+            <div class="stat-card">
+                <i class="fas fa-list"></i>
+                <div class="stat-info">
+                    <span class="stat-number" id="totalTasks">0</span>
+                    <span class="stat-label">Total</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-check-double"></i>
+                <div class="stat-info">
+                    <span class="stat-number" id="completedTasks">0</span>
+                    <span class="stat-label">Concluídas</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-clock"></i>
+                <div class="stat-info">
+                    <span class="stat-number" id="pendingTasks">0</span>
+                    <span class="stat-label">Pendentes</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Input de nova tarefa -->
+        <div class="task-input-section">
+            <div class="input-wrapper">
+                <i class="fas fa-pen input-icon"></i>
+                <input type="text" id="taskInput" placeholder="Adicione uma nova tarefa..." autocomplete="off">
+                <button id="addTaskBtn" class="add-btn">
+                    <i class="fas fa-plus"></i>
+                    <span>Adicionar</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Filtros e busca -->
+        <div class="controls-section">
+            <div class="search-wrapper">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Buscar tarefas..." autocomplete="off">
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-list"></i> Todas
+                </button>
+                <button class="filter-btn" data-filter="pending">
+                    <i class="fas fa-clock"></i> Pendentes
+                </button>
+                <button class="filter-btn" data-filter="completed">
+                    <i class="fas fa-check"></i> Concluídas
+                </button>
+            </div>
+        </div>
+
+        <!-- Lista de tarefas -->
+        <div class="tasks-container">
+            <ul id="taskList" class="task-list"></ul>
+            <div id="emptyState" class="empty-state">
+                <i class="fas fa-clipboard-list"></i>
+                <h3>Nenhuma tarefa ainda</h3>
+                <p>Adicione sua primeira tarefa para começar!</p>
+            </div>
+        </div>
+
+        <!-- Botão de limpar concluídas -->
+        <div class="actions-section">
+            <button id="clearCompletedBtn" class="clear-btn">
+                <i class="fas fa-trash-alt"></i>
+                Limpar Concluídas
+            </button>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="logo">
+                    <h2 class="logo-text">CF</h2>
+                    <span>CRISTIANE FERREIRA DA SILVA</span>
+                </div>
+                <p>&copy; 2025 Cristiane Ferreira da Silva. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
